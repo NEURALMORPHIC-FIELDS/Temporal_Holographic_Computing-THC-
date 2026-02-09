@@ -5,7 +5,6 @@
 **Developed by: Vasile Lucian Borbeleac with the assistance of ChatGPT-5.2 and Claude Opus 4.6**
 
 **GPU-accelerated holographic dynamical system for reservoir computing**
-**Developed by: Vasile Lucian Borbeleac with the assistance of ChatGPT-5.2 and Claude Opus 4.6**
 
 THC is a complex-valued dynamical system where state vectors evolve as
 psi in C^(P x D x Z), computed entirely on GPU via OpenCL targeting AMD
@@ -63,29 +62,20 @@ python main.py
 
 # Headless mode
 python main.py --headless
-
-# Run reservoir computing experiments
-python experiments_reservoir.py
-
-# Run HRR binding experiments
-python experiments_hrr.py
 ```
 
 ## Architecture
 
 ```
-thc/
-  engine.py                 THCEngine - core GPU computation, state management
-  kernels.cl                13 OpenCL kernels (DFPM, FPIS, FDA-psi, FHIDS,
-                            coupling, HRR binding, delay ring, diagnostics)
-  config.py                 All system parameters (P, D, Z, dt, rates)
-  main.py                   Entry point and orchestration loop
-  ui.py                     Tkinter control panel for live parameter tuning
-  visualizer.py             Real-time field and metric visualization
-  network.py                TCP bridge for external stimulus injection
-  experiments_reservoir.py  Memory capacity, XOR, NARMA-10, NL-MC benchmarks
-  experiments_hrr.py        HRR binding and compositional structure tests
-  experiments_i1.py         Iteration-1 diagnostic experiments
+hfbp_gpu/
+  engine.py          THCEngine - core GPU computation, state management
+  kernels.cl         13 OpenCL kernels (DFPM, FPIS, FDA-psi, FHIDS,
+                     coupling, HRR binding, delay ring, diagnostics)
+  config.py          All system parameters (P, D, Z, dt, rates)
+  main.py            Entry point and orchestration loop
+  ui.py              Tkinter control panel for live parameter tuning
+  visualizer.py      Real-time field and metric visualization
+  network.py         TCP bridge for external stimulus injection
 ```
 
 ## Requirements
@@ -122,7 +112,8 @@ Modify `config.py` directly or override at runtime through the UI panel.
 
 ## License
 
-Open source. See LICENSE for details.
+Free for research, education, and non-commercial use. Commercial rights reserved.
+See [LICENSE](../LICENSE) for details.
 
 ---
 
